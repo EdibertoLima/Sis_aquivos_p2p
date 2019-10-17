@@ -1,0 +1,21 @@
+
+module arq{
+        
+        typedef sequence <string> arquivos;
+        typedef sequence<octet> Bytes;
+
+	interface SistemaArq{
+		long list_Arq (in string nome, in arquivos aq, in string p);
+		arquivos att_clientes();
+		arquivos get_Arq(in long a);
+		void set_Arq(in  arquivos aq,in long idd);
+                string get_path(in long a);
+                long qtd_clientes();
+        
+	};
+         interface trans_Arq{
+                Bytes envia_Arq(in string fName);
+                void set_clienteSA(in string parth,in long id);
+
+    };
+};
